@@ -31,3 +31,8 @@
 #create-button {
     border-radius: 10px;
 }
+
+#image_show {
+    height: 100%;
+    width: 100%;
+}

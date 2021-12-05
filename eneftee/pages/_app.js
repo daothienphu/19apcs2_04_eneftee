@@ -4,10 +4,14 @@ import '../styles/Home.module.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
-      <nav className="border-b p-6">
-        <p id="head-title">Metaverse Marketplace</p>
-        <div className="flex mt-4">
+    <div className="ml-10">
+    <p id="head-title">Metaverse Marketplace</p>
+    <div style={{display:'inline-flex'}}>
+
+     <div className="mt-20 mr-20">
+       
+     <ul>
+          <li className="mt-5 mb-5">
           <Link href="/">
             <div style={{display:'inline-flex'}}>
             <div>
@@ -18,25 +22,39 @@ function MyApp({ Component, pageProps }) {
             </a>
             </div>
           </Link>
-          <Link href="/create-item">
+            </li>
+        <li className="mb-5">
+        <Link href="/create-item">
             <a className="mr-6 text-pink-500 font-bold">
               Sell Digital Asset
             </a>
           </Link>
-          <Link href="/my-assets">
+          </li>
+        <li className="mb-5"> 
+        <Link href="/my-assets">
             <a className="mr-6 text-pink-500 font-bold">
               My Digital Assets
             </a>
-          </Link>
-          <Link href="/creator-dashboard">
+          </Link></li>
+
+          <li className="mb-5">
+            <Link href="/creator-dashboard">
             <a className="mr-6 font-bold" style={{color: "orange"}}>
               Creator Dashboard
             </a>
           </Link>
-        </div>
-      </nav>
-      <Component {...pageProps} />
+          </li>
+
+     </ul>
+
+     </div>
+
+   <Component {...pageProps} />
     </div>
+
+    </div>
+    
+   
   )
 }
 

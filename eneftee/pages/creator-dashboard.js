@@ -53,14 +53,14 @@ export default function CreatorDashboard() {
   if (loadingState === 'loaded' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl">No assets created</h1>)
   return (
     <div>
-      <div className="p-4">
+      <div className="px-4"  style={{ maxWidth: '1600px' }}>
         <h2 className="text-2xl py-2">Items Created</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+          <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
             nfts.map((nft, i) => (
-              <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} className="rounded" />
-                <div className="p-4 bg-black">
+              <div key={i} className="border shadow rounded-xl overflow-hidden" >
+                <img id="image_show" src={nft.image} className="rounded" style={{height:300}}  />
+                <div className="p-4 bg-black" >
                   <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export default function CreatorDashboard() {
                 {
                   sold.map((nft, i) => (
                     <div key={i} className="border shadow rounded-xl overflow-hidden">
-                      <img src={nft.image} className="rounded" />
+                      <img id="image_show" src={nft.image} className="rounded" style={{height:300}}  />
                       <div className="p-4 bg-black">
                         <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
                       </div>

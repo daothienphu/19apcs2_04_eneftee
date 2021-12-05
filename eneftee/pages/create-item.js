@@ -77,8 +77,7 @@ export default function CreateItem() {
   }
 
   return (
-    <div className="flex justify-center">
-      <div className="w-1/2 flex flex-col pb-12">
+    <div className="justify-center mt-10">
       <div className="mb-5">
         <p className="text-5xl font-bold text-black">Create new item</p>
       </div>
@@ -111,6 +110,7 @@ export default function CreateItem() {
           id="item_name"
           placeholder="Item name"
           className="mt-2 mb-8 border rounded p-1"
+          style={{width:1000}}
           onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
         />
         <div>
@@ -118,6 +118,7 @@ export default function CreateItem() {
         </div>
 
         <textarea
+        style={{width:1000}}
           id="item_describe"
           placeholder="Type here ..."
           className="mt-2 mb-8 border rounded p-4"
@@ -128,6 +129,7 @@ export default function CreateItem() {
         </div>
        <div className="flex">
        <input
+     style={{width:500}}
           id = "item_amount"
           placeholder="Amount"
           className="mt-2 border rounded p-1"
@@ -139,6 +141,6 @@ export default function CreateItem() {
           CREATE
         </button>
       </div>
-    </div>
+    
   )
 }
