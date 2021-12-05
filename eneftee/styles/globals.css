@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+#head-title {
+    color: orange;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#file_upload{
+    
+}
+
+#item_name {
+    border-radius: 10px;
+    border-color: lightgrey;
+}
+
+#item_describe {
+    border-radius: 10px;
+    border-color: lightgrey;
+}
+
+#item_amount {
+    border-radius: 10px;
+    border-color: lightgrey;
+    width: 200px;
+}
+
+#create-button {
+    border-radius: 10px;
+}

@@ -91,7 +91,7 @@ export default function CreateItem() {
           id="file_upload" 
           type="file"
           name="Asset"
-          className="my-4"
+          className="mt-2 mb-8"
           
           onChange={onChange}
         />
@@ -103,29 +103,40 @@ export default function CreateItem() {
             <img className="rounded mt-4" width="350" src={fileUrl} />
           )
         }
+        <div>
+        <p className="text-3xl font-bold text-black">Asset name</p>
+        </div>
+
         <input 
+          id="item_name"
           placeholder="Item name"
-          className="mt-8 border rounded p-1"
+          className="mt-2 mb-8 border rounded p-1"
           onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
         />
         <div>
         <p className="text-3xl font-bold text-black">Description</p>
         </div>
+
         <textarea
+          id="item_describe"
           placeholder="Type here ..."
-          className="mt-2 border rounded p-4"
+          className="mt-2 mb-8 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
         />
         <div>
         <p className="text-3xl font-bold text-black">Price</p>
         </div>
-        <input
+       <div className="flex">
+       <input
+          id = "item_amount"
           placeholder="Amount"
           className="mt-2 border rounded p-1"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
         />
-        <button onClick={createMarket} className="font-bold mt-4 bg-orange-500 text-white rounded p-4 shadow-lg">
-          Create Digital Asset
+        <p className="font-bold mt-3 ml-5">ETH</p>
+       </div>
+        <button id="create-button" onClick={createMarket} style={{width:200}} className="font-bold mt-4 bg-orange-500 text-white rounded p-2 shadow-lg">
+          CREATE
         </button>
       </div>
     </div>

@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <nav className="border-b p-6">
-        <p className="text-4xl font-bold text-pink">Metaverse Marketplace</p>
+        <p id="head-title">Metaverse Marketplace</p>
         <div className="flex mt-4">
           <Link href="/">
             <div style={{display:'inline-flex'}}>
