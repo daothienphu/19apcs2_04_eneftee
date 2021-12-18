@@ -8,10 +8,6 @@
     font-weight: bold;
 }
 
-#file_upload{
-    
-}
-
 #item_name {
     border-radius: 10px;
     border-color: lightgrey;
@@ -35,4 +31,11 @@
 #image_show {
     height: 100%;
     width: 100%;
+}
+
+#main {
+    background-color: white ;
+    height: 2000;
+    max-height: 150%;
+    overflow: auto;
 }

@@ -76,8 +76,23 @@ export default function CreateItem() {
     router.push('/')
   }
 
+  async function onSearch() {
+    
+  }
+
   return (
     <div className="justify-center mt-10">
+      <div>
+        
+      <input 
+          id="item_name"
+          
+          placeholder="Useless searchbar, which I just put here so it looks less empty"
+          className="mt-2 mb-8 border rounded p-1"
+          style={{width:1000}}
+          onChange={e => onSearch()}
+        />
+      </div>
       <div className="mb-5">
         <p className="text-5xl font-bold text-black">Create new item</p>
       </div>
