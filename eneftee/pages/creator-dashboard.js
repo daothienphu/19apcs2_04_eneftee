@@ -2,6 +2,8 @@ import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Web3Modal from "web3modal"
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
   nftmarketaddress, nftaddress
@@ -69,12 +71,24 @@ export default function CreatorDashboard() {
     await transaction.wait();
   }
 
-  if (loadingState === 'loaded' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl">No assets created</h1>)
+  if (loadingState === 'loaded' && !nfts.length) return (<h1 className="py-10 px-10 text-3xl">No assets created</h1>)
   return (
     <div>
-      <div className="px-4"  style={{ maxWidth: '1600px' }}>
-        <h2 className="text-3xl font-bold text-black pb-2 pt-4">Items Created</h2>
-          <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+      <div className="pl-10 pt-3">   
+        <input 
+          id="item_name"
+          placeholder="Useless searchbar, which I just put here so it looks less empty"
+          className="mt-2 mb-2 border rounded-3xl p-1 pl-3 pb-2 mr-1"
+          style={{width:1000}}
+          onChange={e => onEnterSearchPhrase(e.target.value)}
+        />
+        <button className="bg-orange-500 text-white font-bold pb-2 pt-1 px-3 mt-2 rounded-3xl" onClick={() => onSearch()}>
+          <FontAwesomeIcon icon={faSearch}/>
+        </button>
+      </div>
+      <div className="pl-10" >
+        <h2 className="text-3xl font-bold text-black pb-2 pt-2">NFTs Created</h2>
+        <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden bg-white" >
@@ -90,7 +104,7 @@ export default function CreatorDashboard() {
                   </div>
 
                   <div style={{ overflow: 'hidden' }}>
-                    <p className="text-black-400">{nft.description}</p>
+                    <p className="text-black-400 max-h-12 overflow-hidden">{nft.description}</p>
                   </div>                  
 
                   <div className="content-center">
@@ -110,11 +124,11 @@ export default function CreatorDashboard() {
           }
         </div>
       </div>
-        <div className="px-4 pb-10">
+        <div className="pl-10 pb-10">
         {
           Boolean(sold.length) && (
             <div>
-              <h2 className="text-3xl font-bold text-black pb-2 pt-4">Items sold</h2>
+              <h2 className="text-3xl font-bold text-black pb-2 pt-4">NFTs sold</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
                 {
                   sold.map((nft, i) => (

@@ -82,18 +82,9 @@ export default function CreateItem() {
 
   return (
     <div className="justify-center mt-10 pb-10">
-      <div className="pl-10">   
-        <input 
-          id="item_name"
-          placeholder="&nbsp;&nbsp;Useless searchbar, which I just put here so it looks less empty"
-          className="mt-2 mb-8 border rounded-3xl p-1"
-          style={{width:1000}}
-          onChange={e => onSearch()}
-        />
-      </div>
-      <div className="pl-20">
+      <div className="pl-10">
         <div className="mb-5">
-          <p className="text-5xl font-bold text-black">Create new item</p>
+          <p className="text-5xl font-bold text-black">Create new NFT</p>
         </div>
         <div>
           <p className="text-3xl font-bold text-black">Choose asset</p>
@@ -117,8 +108,8 @@ export default function CreateItem() {
         </div>
         <input 
           id="item_name"
-          placeholder="&nbsp;&nbsp;Item name"
-          className="mt-2 mb-8 border rounded p-1"
+          placeholder="Item name"
+          className="mt-2 mb-8 border rounded p-1 pl-3 pb-2"
           style={{width:1000}}
           onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
         />
@@ -129,7 +120,7 @@ export default function CreateItem() {
           style={{width:1000}}
           id="item_describe"
           placeholder="Type here ..."
-          className="mt-2 mb-8 border rounded p-4"
+          className="mt-2 mb-8 border rounded p-1 pl-3 pb-2"
           onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
         />
         <div>
@@ -139,13 +130,13 @@ export default function CreateItem() {
           <input
             style={{width:200}}
             id = "item_amount"
-            placeholder="&nbsp;&nbsp;Amount"
-            className="mt-2 border rounded p-1"
+            placeholder="Amount"
+            className="mt-2 border rounded p-1 pl-3 pb-2"
             onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
           />
           <p className="font-bold mt-3 ml-5">ETH</p>
         </div>
-        <button id="create-button" onClick={createMarket} style={{width:200}} className="font-bold mt-4 bg-orange-500 text-white rounded p-2 shadow-lg">
+        <button id="create-button" onClick={createMarket} style={{width:200}} className="font-bold mt-4 bg-orange-500 text-white rounded p-2 shadow-lg mb-10">
           CREATE
         </button>
       </div>
