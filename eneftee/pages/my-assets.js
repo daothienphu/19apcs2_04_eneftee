@@ -39,6 +39,8 @@ export default function MyAssets() {
         seller: i.seller,
         owner: i.owner,
         image: meta.data.image,
+        name: meta.data.name,
+        description: meta.data.description
       }
       return item
     }))
@@ -47,15 +49,32 @@ export default function MyAssets() {
   }
   if (loadingState === 'loaded' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl">No assets owned</h1>)
   return (
-    <div className="flex justify-center">
-      <div className="p-4">
+    <div className="">
+      <div className="p-4 pb-10 h-screen">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
             nfts.map((nft, i) => (
-              <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} className="rounded" />
-                <div className="p-4 bg-black">
-                  <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
+              <div key={i} className="border shadow rounded-xl overflow-hidden bg-white" >
+                <img id="image_show" src={nft.image} className="rounded object-cover" style={{height:300}}  />
+                <div className="p-4">
+                  <div> 
+                    <p style={{ height: '30px' }} className="text-2xl font-semibold">
+                      {nft.name}
+                    </p>
+                    <p id="item_seller">
+                      {nft.seller}
+                    </p>
+                  </div>
+
+                  <div style={{ overflow: 'hidden' }}>
+                    <p className="text-black-400">{nft.description}</p>
+                  </div>                  
+
+                  <div className="content-center">
+                    <p className="text-2xl text-center font-bold text-black">
+                      {nft.price} ETH
+                    </p>
+                  </div>
                 </div>
               </div>
             ))

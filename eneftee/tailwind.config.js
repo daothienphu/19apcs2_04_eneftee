@@ -14,7 +14,10 @@ module.exports = {
       red: colors.rose,
       yellow: colors.amber,
       orange: colors.orange,
-      blue: colors.blue
+      blue: colors.blue,
+      mildGray: '#dddddd',
+      mainBG: '#E5E5E5'
+
     },
     extend: {},
   },

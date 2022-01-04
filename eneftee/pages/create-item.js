@@ -81,81 +81,75 @@ export default function CreateItem() {
   }
 
   return (
-    <div className="justify-center mt-10">
-      <div>
-        
-      <input 
+    <div className="justify-center mt-10 pb-10">
+      <div className="pl-10">   
+        <input 
           id="item_name"
-          
-          placeholder="Useless searchbar, which I just put here so it looks less empty"
-          className="mt-2 mb-8 border rounded p-1"
+          placeholder="&nbsp;&nbsp;Useless searchbar, which I just put here so it looks less empty"
+          className="mt-2 mb-8 border rounded-3xl p-1"
           style={{width:1000}}
           onChange={e => onSearch()}
         />
       </div>
-      <div className="mb-5">
-        <p className="text-5xl font-bold text-black">Create new item</p>
-      </div>
-
-      <div>
-        <p className="text-3xl font-bold text-black">Choose asset</p>
-      </div>
-
-      <input
-          id="file_upload" 
-          type="file"
-          name="Asset"
-          className="mt-2 mb-8"
-          
-          onChange={onChange}
-        />
-
-
-
+      <div className="pl-20">
+        <div className="mb-5">
+          <p className="text-5xl font-bold text-black">Create new item</p>
+        </div>
+        <div>
+          <p className="text-3xl font-bold text-black">Choose asset</p>
+        </div>
+        <label class="custom-file-upload">
+          <input
+            type="file"
+            name="Asset"
+            className="mt-2"
+            onChange={onChange}
+          />
+          Choose File...
+        </label>
         {
           fileUrl && (
             <img className="rounded mt-4" width="350" src={fileUrl} />
           )
         }
-        <div>
-        <p className="text-3xl font-bold text-black">Asset name</p>
+        <div className="mt-8">
+          <p className="text-3xl font-bold text-black">Asset name</p>
         </div>
-
         <input 
           id="item_name"
-          placeholder="Item name"
+          placeholder="&nbsp;&nbsp;Item name"
           className="mt-2 mb-8 border rounded p-1"
           style={{width:1000}}
           onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
         />
         <div>
-        <p className="text-3xl font-bold text-black">Description</p>
+          <p className="text-3xl font-bold text-black">Description</p>
         </div>
-
         <textarea
-        style={{width:1000}}
+          style={{width:1000}}
           id="item_describe"
           placeholder="Type here ..."
           className="mt-2 mb-8 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
         />
         <div>
-        <p className="text-3xl font-bold text-black">Price</p>
+          <p className="text-3xl font-bold text-black">Price</p>
         </div>
-       <div className="flex">
-       <input
-     style={{width:500}}
-          id = "item_amount"
-          placeholder="Amount"
-          className="mt-2 border rounded p-1"
-          onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
-        />
-        <p className="font-bold mt-3 ml-5">ETH</p>
-       </div>
+        <div className="flex">
+          <input
+            style={{width:200}}
+            id = "item_amount"
+            placeholder="&nbsp;&nbsp;Amount"
+            className="mt-2 border rounded p-1"
+            onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
+          />
+          <p className="font-bold mt-3 ml-5">ETH</p>
+        </div>
         <button id="create-button" onClick={createMarket} style={{width:200}} className="font-bold mt-4 bg-orange-500 text-white rounded p-2 shadow-lg">
           CREATE
         </button>
       </div>
+    </div>
     
   )
 }

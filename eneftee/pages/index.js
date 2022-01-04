@@ -23,7 +23,7 @@ export default function Home() {
   }, [])
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider()
+    const provider = new ethers.providers.JsonRpcProvider("http://localhost:8545")
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
     const data = await marketContract.fetchMarketItems()
@@ -66,7 +66,7 @@ export default function Home() {
 
   function randomNumber(min, max) { 
     return Math.floor(Math.random() * (max - min) + min);
-} 
+  } 
 
   if (loadingState === 'loaded' && !nfts.length) return (
     <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>
@@ -75,39 +75,38 @@ export default function Home() {
   return (
     <div className="flex justify-center">
       <div className="px-4" style={{ maxWidth: '1500px' }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
             nfts.map((nft, i) => {
-              return(
-              <div key={i} className="border shadow rounded-xl overflow-hidden bg-white" >
-                <img id="image_show" src={nft.image} style={{maxHeight: 250}} />
-                <div className="p-4">
-                  <div>
-                  <div> 
-                  <p style={{ height: '30px' }} className="text-2xl font-semibold">
-                    {nft.name}
-                  </p>
-                  <p>
-                    hihi
-                  </p>
-                    </div>
-                    <p>
-                      hoho
-                    </p>
-                    </div>
-                  <div style={{ overflow: 'hidden' }}>
-                    <p className="text-black-400">{nft.description}</p>
-
-                  </div>
+              return (
+                <div key={i} className="border shadow rounded-xl overflow-hidden bg-white" >
+                  <img id="image_show" src={nft.image} className="rounded object-cover" style={{height:300}}  />
                   <div className="p-4">
-                    <p className="text-2xl text-center mb-4 font-bold text-black">{nft.price} ETH</p>
-                   
-                    <button className="w-full bg-orange-500 text-white font-bold py-2 px-12 rounded" onClick={() => buyNft(nft)}>Buy</button>
+                    <div> 
+                      <p style={{ height: '30px' }} className="text-2xl font-semibold">
+                        {nft.name}
+                      </p>
+                      <p id="item_seller">
+                        {nft.seller}
+                      </p>
+                    </div>
 
+                    <div style={{ overflow: 'hidden' }}>
+                      <p className="text-black-400">{nft.description}</p>
+                    </div>                  
+
+                    <div className="content-center">
+                      <p className="text-2xl text-center font-bold text-black">
+                        {nft.price} ETH
+                      </p>
+                      <div className="flex">
+                        <button className="flex-1 bg-orange-500 text-white font-bold py-2 px-12 mt-2 rounded" onClick={() => buyNft(nft)}>
+                          Buy
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-              </div>
             )})
           }
         </div>

@@ -60,6 +60,11 @@
   font-size: 1.5rem;
 }
 
+.seller {
+  font-size: 0.5rem;
+  line-height: 2.25rem;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;

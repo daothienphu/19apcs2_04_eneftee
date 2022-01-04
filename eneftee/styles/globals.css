@@ -34,8 +34,37 @@
 }
 
 #main {
-    background-color: white ;
+    background-color: #E5E5E5 ;
     height: 2000;
     max-height: 150%;
+    min-height: 100%;
     overflow: auto;
+}
+
+#item_seller{
+    font-size: 0.6rem;
+    line-height: 0.75rem;
+    color: gray;
+}
+
+#file_upload{
+    border-radius: 10px;
+    border-color: lightgrey;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #ACACAC;
+    color: white;
+    border-radius: 10px;
+    width:200px;
+    text-align: center;
+}
+
+input[type="file"]{
+    display: none;
 }
