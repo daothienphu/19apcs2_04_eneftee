@@ -134,7 +134,7 @@ export default function MyAssets() {
           <FontAwesomeIcon icon={faSearch}/>
         </button>
       </div>
-      <div className="pl-10 pb-10 h-screen">
+      <div className="pl-10 w-4/5">
         <h2 className="text-3xl font-bold text-black pb-2 pt-2">My NFTs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
