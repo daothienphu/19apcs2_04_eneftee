@@ -76,10 +76,6 @@ export default function CreateItem() {
     router.push('/')
   }
 
-  async function onSearch() {
-    
-  }
-
   return (
     <div className="justify-center mt-10 pb-10">
       <div className="pl-10">
@@ -89,7 +85,7 @@ export default function CreateItem() {
         <div>
           <p className="text-3xl font-bold text-black">Choose asset</p>
         </div>
-        <label class="custom-file-upload">
+        <label className="custom-file-upload">
           <input
             type="file"
             name="Asset"

@@ -8,11 +8,10 @@ import Image from 'next/image'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-
   return (
     <div id="main" className="h-screen">
-      <div style={{display:'inline-flex'}} className="bg-mainBG h-full">
-        <div className="pl-10 pt-5 pr-10 pb-10 bg-mildGray h-full">
+      <div style={{display:'inline-flex'}} className="bg-mainBG h-fit min-h-screen">
+        <div className="pl-10 pt-5 pr-10 pb-10 bg-mildGray h-fit">
           <ul>
             <div width={170} height={44}>
               <Image src={"/logo.png"} width={170} height={44} layout="fixed"/>
