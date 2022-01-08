@@ -104,8 +104,6 @@ export default function CreatorDashboard() {
     setSearchPharse(text);
   }
   async function onSearch(){
-    console.log("searchPhrase", searchPhrase)
-    console.log("nfts", nfts)
     let res = []
     for (let i = 0; i < nfts.length; i++) {
       let checkName = nfts[i].name.toLowerCase().includes(searchPhrase.toLowerCase())
@@ -114,9 +112,17 @@ export default function CreatorDashboard() {
         res.push(nfts[i])
       }
     }
-    searched = true
-    console.log(searched)
     setNfts(res)
+    res = []
+    for (let i = 0; i < sold.length; i++) {
+      let checkName = sold[i].name.toLowerCase().includes(searchPhrase.toLowerCase())
+      let checkDescription = sold[i].description.toLowerCase().includes(searchPhrase.toLowerCase())
+      if (checkName || checkDescription) {
+        res.push(sold[i])
+      }
+    }
+    setSold(res)
+    searched = true   
   }
 
 
@@ -243,7 +249,7 @@ export default function CreatorDashboard() {
           }
         </div>
       </div>
-        <div className="pl-10 pb-10">
+        <div className="pl-10 pb-10 w-4/5">
         {
           Boolean(sold.length) && (
             <div>

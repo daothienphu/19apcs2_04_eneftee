@@ -46,6 +46,7 @@ export default function MyAssets() {
       let item = {
         price,
         tokenId: i.tokenId.toNumber(),
+        creator: i.creator,
         seller: i.seller,
         owner: i.owner,
         image: meta.data.image,
